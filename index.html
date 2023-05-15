@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-theme">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="kuraljson.js" async></script>
+    <script src="script.js" defer></script>
+    <title>திருக்குறள் அறிவோம்</title>
+  </head>
+
+  <body onload="//newKural();">
+    <div class="container">
+      <header class="header-title">
+        <div class="img-glow">
+          <img class="thiruvalluvar-img imgs" id="thiruvalluvar-img" src="Thiuvalluvar.jpg" />
+        </div>
+        
+        <p class="title">திருக்குறள்</p>
+      </header>
+      <div class="wrapper">
+        <div class="sec-head">
+          <p><span class="sec-title" id="sec-title">அறத்துப்பால்</span></p>
+        </div>
+        <div class="chapter-head">
+          <p>
+            <span class="chapter-title" id="chapter-title">பாயிரவியல்</span>
+          </p>
+        </div>
+        <div class="sub-chapter">
+          <p>
+            <span class="sub-chapter-title" id="sub-chapter-title"
+              >கடவுள் வாழ்த்து</span
+            >
+          </p>
+        </div>
+        <div class="kural-num header">
+          <p>
+            
+            <div class="inc-dec">
+              <button class="btn-inc-dec" id="btn-super-dec"><i class="fa-sharp fa-solid fa-backward"></i></button>
+
+              <div id="decrement" class="dec-div">
+                <button class="btn-inc-dec" id="btn-dec"><i class="fa-solid fa-play fa-flip-horizontal"></i></button>
+              </div>
+
+              <span class="kural-num-title" id="kural-num"
+              >குறள் எண் :<span class="num" id="num">1</span></span>
+              
+              <div id="increment" class="inc-div" >
+                <button class="btn-inc-dec" id="btn-inc"><i class="fa-solid fa-play"></i></button>
+              </div>
+             
+              <button class="btn-inc-dec" id="btn-super-inc"><i class="fa-sharp fa-solid fa-forward"></i></button>
+            </div>
+            
+          </p>
+          
+        </div>
+        <div class="kural-num-search">
+          <label for="kural-num-text">குறள் எண் தேடல்  :</label>
+          <input type="text" name="kural-num-text" id="kural-num-text">
+          <i class="btn-search fa-brands fa-searchengin" id="btn-search"></i>
+        </div>
+       
+        <div class="tam">
+          <div class="kural content-text">
+            <p>
+              <span class="kural-1" id="line1">அகர முதல எழுத்தெல்லாம் ஆதி</span>
+            </p>
+            <p><span class="kural-2" id="line2">பகவன் முதற்றே உலகு.</span></p>
+          </div>
+          <!--  <div class="tam-exp">
+                        <p><span class="tam-exp-header header">பொருள்</span></p>
+                        <p><span class="tam-exp-text content-text" id="tam-exp-text">அகரம் எழுத்துக்களுக்கு முதன்மை; ஆதிபகவன், உலகில் வாழும் உயிர்களுக்கு முதன்மை.</span></p>
+                    </div> -->
+          <div class="muva-urai">
+            <img src="muva.jpg" alt="muva image" class="muva-img imgs" />
+            <p>
+              <span class="urai-header muva-header urai header"
+                >மு.வரதராசனார் உரை
+              </span>
+            </p>
+            <P
+              ><span class="urai-text urai content-text" id="muva-text"
+                >எழுத்துக்கள் எல்லாம் அகரத்தை அடிப்படையாக கொண்டிருக்கின்றன.
+                அதுபோல உலகம் கடவுளை அடிப்படையாக கொண்டிருக்கிறது.</span
+              ></P
+            >
+          </div>
+          <div class="muka-urai">
+            <img src="kalaingar.jpg" alt="muka image" class="muka-img imgs" />
+            <p>
+              <span class="urai-header muka-header urai header"
+                >கலைஞர் உரை
+              </span>
+            </p>
+            <P
+              ><span class="urai-text urai content-text" id="muka-text"
+                >அகரம் எழுத்துக்களுக்கு முதன்மை; ஆதிபகவன், உலகில் வாழும்
+                உயிர்களுக்கு முதன்மை.</span
+              ></P
+            >
+          </div>
+          <div class="sp-urai">
+            <img src="solpaa.jpeg" alt="sp image" class="sp-img imgs" />
+            <p>
+              <span class="urai-header sp-header urai header"
+                >சாலமன் பாப்பையா உரை</span
+              >
+            </p>
+            <P
+              ><span class="urai-text urai content-text" id="sp-text"
+                >எழுத்துக்கள் எல்லாம் அகரத்தில் தொடங்குகின்றன; (அது போல) உலகம்
+                கடவுளில் தொடங்குகிறது.</span
+              ></P
+            >
+          </div>
+        </div>
+        <div class="eng"> 
+          <div class="sec-head">
+            <p><span class="sec-title" id="eng-sec-title">Virtue</span></p>
+          </div>
+          <div class="chapter-head">
+            <p>
+              <span class="chapter-title" id="eng-chapter-title">Prologue</span>
+            </p>
+          </div>
+          <div class="sub-chapter">
+            <p>
+              <span class="sub-chapter-title" id="eng-sub-chapter-title"
+                >The Praise of God</span
+              >
+            </p>
+          </div>
+          <div class="eng-verse">
+            <p><span class="eng-verse-header header"> English Verse </span></p>
+            <p>
+              <span class="eng-verse-text content-text" id="eng-verse-text"
+                >'A' leads letters; the Ancient Lord Leads and lords the entire
+                world.</span
+              >
+            </p>
+          </div>
+          <div class="eng-exp">
+            <p>
+              <span class="eng-exp-header header"> English Explanation </span>
+            </p>
+            <p>
+              <span class="eng-exp-text content-text" id="eng-exp-text"
+                >As the letter A is the first of all letters, so the eternal God
+                is first in the world</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="btn-container">
+        <div class="div-btn">
+          <button
+            class="btn btn-newKural"
+            id="btn-newKural"
+            onclick="newKural();"
+          >
+            புதுக்குறள் தருக !
+          </button>
+        </div>
+      </div>
+    </div>
+      
+  </body>
+</html>
