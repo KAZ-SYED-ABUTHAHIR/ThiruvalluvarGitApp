@@ -3,6 +3,8 @@
 
 :root {
   --font-tamil: 'Noto Sans Tamil', sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  user-select: none;
 }
 
 html.dark-theme {
@@ -197,7 +199,7 @@ div.inc-dec>i{
 }
 
 .kural-num-search>label {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: var(--font-tamil);
   font-weight: 900;
 }
@@ -210,7 +212,7 @@ div.inc-dec>i{
   font-size: 1.2rem;
 }
 
-.kural-num-search>.btn-search {
+.kural-num-search>.btn-search, .btn-random {
   font-size: 2rem;
   margin-left: 1rem;
 }
@@ -361,7 +363,7 @@ div.btn-container {
   }
 
   .kural-num-search>label {
-    font-size: 1em;
+    font-size: 1rem;
   }
 
   .header {
@@ -377,6 +379,10 @@ div.btn-container {
     text-align: left;
   }
 
+  .kural-num-search>label {
+    font-size: 0.9em;
+  }
+
   .header {
     font-size: 1.0em;
     padding: 0.2em 0.0em;
@@ -388,6 +394,15 @@ div.btn-container {
     font-size: 0.65em;
     font-weight: bolder;
     text-align: left;
+  }
+
+  .kural-num-search>label {
+    font-size: 0.7em;
+  }
+
+  .kural-num-search>.btn-search, .btn-random {
+    font-size: 1rem;
+    margin-left: 1rem;
   }
 
   .header {
@@ -423,4 +438,19 @@ div.btn-container {
 /* Add a class to show the snackbar */
 #snackbar.show {
   bottom: 3rem; /* Slide it up */
+}
+
+
+#btn-random {
+  cursor: pointer;
+  color: hsl(348, 83%, 50%);
+}
+
+/* Add a class for the animation */
+#btn-random.animate {
+  /* Use a transform to rotate the icon */
+  transform: rotateX(180deg);
+
+  /* Use a transition to add duration and easing */
+  transition: transform 0.5s ease-in-out;
 }

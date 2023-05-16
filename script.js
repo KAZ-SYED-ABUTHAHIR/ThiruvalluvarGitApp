@@ -13,6 +13,7 @@ let btnSuperDecrement = document.getElementById('btn-super-dec')
 
 let imgThiruvalluvar = document.getElementById('thiruvalluvar-img')
 let btnSearch = document.getElementById('btn-search')
+let btnRandom = document.getElementById('btn-random')
 let txtKuralNumber = document.getElementById('kural-num-text')
 
 let setKuralData = kuralNumber => {
@@ -57,6 +58,16 @@ function newKural () {
   currentKuralNumber = kuralNumber
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
+
+btnRandom.addEventListener('click', (e)=>{
+  newKural()
+  btnRandom.classList.add("animate");
+
+  // Remove the animate class after the animation ends
+  setTimeout(() => {
+    btnRandom.classList.remove("animate");
+  }, 1000);
+})
 
 btnIncrement.addEventListener('click', () => {
   if (1 <= currentKuralNumber && currentKuralNumber < 1330) {
