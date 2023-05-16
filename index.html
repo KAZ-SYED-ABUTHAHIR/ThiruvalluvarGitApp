@@ -18,6 +18,29 @@
 
   <body onload="//newKural();">
     <div class="container">
+      <!-- Add a touch area at the bottom of the web app -->
+      <div
+        id="touch-area"
+        ontouchstart="handleTouchStart(event)"
+        ontouchmove="handleTouchMove(event)"
+        ontouchend="handleTouchEnd(event)"
+      ></div>
+
+      <!-- Add a snackbar element that will slide up when triggered -->
+      <div id="snackbar">
+        <div class="btn-container">
+          <div class="div-btn">
+            <button
+              class="btn btn-newKural"
+              id="btn-newKural"
+              onclick="newKural();"
+            >
+              புதுக்குறள் தருக !
+            </button>
+          </div>
+        </div>
+      </div>
+
       <header class="header-title">
         <div class="img-glow">
           <img
@@ -175,17 +198,7 @@
           </div>
         </div>
       </div>
-      <div class="btn-container">
-        <div class="div-btn">
-          <button
-            class="btn btn-newKural"
-            id="btn-newKural"
-            onclick="newKural();"
-          >
-            புதுக்குறள் தருக !
-          </button>
-        </div>
-      </div>
+      
     </div>
   </body>
 </html>

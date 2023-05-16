@@ -118,3 +118,43 @@ imgThiruvalluvar.addEventListener('click', () => {
 
   themeToggle = !themeToggle
 })
+
+
+// Define some variables to store the touch coordinates
+let touchStartY = null;
+let touchEndY = null;
+
+// Define a function to handle the touch start event
+function handleTouchStart(event) {
+  // Get the first touch object
+  const touch = event.touches[0];
+
+  // Store the start y coordinate
+  touchStartY = touch.clientY;
+}
+
+// Define a function to handle the touch move event
+function handleTouchMove(event) {
+  // Get the first touch object
+  const touch = event.touches[0];
+
+  // Store the end y coordinate
+  touchEndY = touch.clientY;
+}
+
+// Define a function to handle the touch end event
+function handleTouchEnd(event) {
+  // Get the snackbar element
+  const snackbar = document.getElementById("snackbar");
+
+  // Check if the user swiped up from the bottom edge
+  if (touchStartY > window.innerHeight - 50 && touchEndY < touchStartY) {
+    // Show the snackbar by adding the show class
+    snackbar.classList.add("show");
+
+    // Hide the snackbar after 3 seconds
+    setTimeout(() => {
+      snackbar.classList.remove("show");
+    }, 4000);
+  }
+}

@@ -61,7 +61,7 @@ p.title {
   font-family: var(--font-tamil);
   font-weight: 900;
   letter-spacing: 0.4em;
-  z-index: 9999;
+  z-index: 99;
 }
 
 .container {
@@ -314,8 +314,8 @@ div.btn-container {
   align-items: center;
   justify-content: center;
   place-items: center;
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
+  margin-top: .2rem;
+  margin-bottom: .2rem;
   background: #00000000;
   color: var(--clr-text-variant-2);
   padding: 0 0;
@@ -327,7 +327,6 @@ div.btn-container {
 .btn {
   width: auto;
   padding: 12px 20px 12px 20px;
-  /* border-radius: 1rem; */
   margin: auto;
   text-align: center;
   justify-content: center;
@@ -339,7 +338,7 @@ div.btn-container {
   width: 100%;
   height: 100%;  
   background-color: hsl(348, 83%, 50%);
-  color: var(--clr-text-variant-2);
+  color: whitesmoke;
   font-size: 1.0rem;
   font-weight: 700;
 }
@@ -395,4 +394,33 @@ div.btn-container {
     font-size: 1.0em;
     padding: 0.2em 0.0em;
   }
+}
+
+
+/* Style the touch area */
+#touch-area {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1rem;
+  background-color: transparent;
+  z-index: 9999;
+}
+
+/* Style the snackbar */
+#snackbar {
+  position: fixed;
+  bottom: -10rem; /* Hide it by default */
+  left: 0;
+  right: 0;
+  height: max-content;
+  background-color: #7c1d1d00;
+  transition: bottom 0.8s; /* Add a transition effect */
+  z-index: 1;
+}
+
+/* Add a class to show the snackbar */
+#snackbar.show {
+  bottom: 3rem; /* Slide it up */
 }
