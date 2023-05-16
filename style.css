@@ -15,6 +15,7 @@ html.dark-theme {
   --clr-box-shadow: rgba(0, 0, 0, 0.5);
   --clr-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   --clr-btn: #222222;
+  --clr-inc-dec-btn-focus: hsl(180, 100%, 70%);
   --pdg-left: 0em;
   --mgn-left: 0em;
 }
@@ -29,6 +30,7 @@ html.light-theme {
   --clr-box-shadow: rgba(0, 0, 0, 0.5);
   --clr-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   --clr-btn: #222222;
+  /* --clr-inc-dec-btn-focus: hsl(180, 100%, 10%); */
   --pdg-left: 0em;
   --mgn-left: 0em;
 }
@@ -148,6 +150,7 @@ p.title {
 .kural-num {
   display: flex;
   margin: 15px 0 5px 0;
+  height: max-content;
   justify-content: center;
   align-items: center;
 }
@@ -162,7 +165,8 @@ div.inc-dec {
   flex-direction: row;
   justify-content: space-between;
   width: 90%;
-  align-items: center;
+  height: 2rem;
+  align-items:center;
  
 }
 
@@ -180,8 +184,8 @@ div.inc-dec>i{
 
 .btn-inc-dec:focus {
   outline: none;
-  color: rgb(247, 255, 235);
-  text-shadow: 0 0 2px hsl(84, 100%, 59%),0 0 4px hsl(84, 100%, 69%),0 0 6px hsl(84, 100%, 79%);
+  color: var( --clr-inc-dec-btn-focus);
+  text-shadow: 2px 2px 10px var( --clr-inc-dec-btn-focus);
 }
 
 .kural-num-search {
@@ -380,9 +384,9 @@ div.btn-container {
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 410px) {
   .kural>* {
-    font-size: 0.7em;
+    font-size: 0.65em;
     font-weight: bolder;
     text-align: left;
   }
