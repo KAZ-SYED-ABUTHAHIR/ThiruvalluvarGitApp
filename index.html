@@ -4,8 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="kuraljson.js" async></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="kural.min.js" async></script>
     <script src="script.js" defer></script>
     <title>திருக்குறள் அறிவோம்</title>
   </head>
@@ -14,9 +20,13 @@
     <div class="container">
       <header class="header-title">
         <div class="img-glow">
-          <img class="thiruvalluvar-img imgs" id="thiruvalluvar-img" src="./imgs/Thiuvalluvar.jpg" />
+          <img
+            class="thiruvalluvar-img imgs"
+            id="thiruvalluvar-img"
+            src="./imgs/Thiuvalluvar.jpg"
+          />
         </div>
-        
+
         <p class="title">திருக்குறள்</p>
       </header>
       <div class="wrapper">
@@ -36,34 +46,39 @@
           </p>
         </div>
         <div class="kural-num header">
-          <p>
-            
-            <div class="inc-dec">
-              <button class="btn-inc-dec" id="btn-super-dec"><i class="fa-sharp fa-solid fa-backward"></i></button>
+          <div class="inc-dec">
+            <button class="btn-inc-dec" id="btn-super-dec">
+              <i class="fa-sharp fa-solid fa-backward"></i>
+            </button>
 
-              <div id="decrement" class="dec-div">
-                <button class="btn-inc-dec" id="btn-dec"><i class="fa-solid fa-play fa-flip-horizontal"></i></button>
-              </div>
-
-              <span class="kural-num-title" id="kural-num"
-              >குறள் எண் :<span class="num" id="num">1</span></span>
-              
-              <div id="increment" class="inc-div" >
-                <button class="btn-inc-dec" id="btn-inc"><i class="fa-solid fa-play"></i></button>
-              </div>
-             
-              <button class="btn-inc-dec" id="btn-super-inc"><i class="fa-sharp fa-solid fa-forward"></i></button>
+            <div id="decrement" class="dec-div">
+              <button class="btn-inc-dec" id="btn-dec">
+                <i class="fa-solid fa-play fa-flip-horizontal"></i>
+              </button>
             </div>
-            
-          </p>
-          
+            <p>
+              <span class="kural-num-title" id="kural-num"
+                >குறள் எண் :<span class="num" id="num">1</span></span
+              >
+            </p>
+
+            <div id="increment" class="inc-div">
+              <button class="btn-inc-dec" id="btn-inc">
+                <i class="fa-solid fa-play"></i>
+              </button>
+            </div>
+
+            <button class="btn-inc-dec" id="btn-super-inc">
+              <i class="fa-sharp fa-solid fa-forward"></i>
+            </button>
+          </div>
         </div>
         <div class="kural-num-search">
-          <label for="kural-num-text">குறள் எண் தேடல்  :</label>
-          <input type="text" name="kural-num-text" id="kural-num-text">
+          <label for="kural-num-text">குறள் எண் தேடல் :</label>
+          <input type="text" name="kural-num-text" id="kural-num-text" />
           <i class="btn-search fa-brands fa-searchengin" id="btn-search"></i>
         </div>
-       
+
         <div class="tam">
           <div class="kural content-text">
             <p>
@@ -90,7 +105,11 @@
             >
           </div>
           <div class="muka-urai">
-            <img src="./imgs/kalaingar.jpg" alt="muka image" class="muka-img imgs" />
+            <img
+              src="./imgs/kalaingar.jpg"
+              alt="muka image"
+              class="muka-img imgs"
+            />
             <p>
               <span class="urai-header muka-header urai header"
                 >கலைஞர் உரை
@@ -118,7 +137,7 @@
             >
           </div>
         </div>
-        <div class="eng"> 
+        <div class="eng">
           <div class="sec-head">
             <p><span class="sec-title" id="eng-sec-title">Virtue</span></p>
           </div>
@@ -168,6 +187,5 @@
         </div>
       </div>
     </div>
-      
   </body>
 </html>

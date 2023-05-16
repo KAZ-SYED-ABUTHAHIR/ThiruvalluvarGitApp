@@ -16,30 +16,34 @@ let btnSearch = document.getElementById('btn-search')
 let txtKuralNumber = document.getElementById('kural-num-text')
 
 let setKuralData = kuralNumber => {
-  let kuralJSON = kural['kural'][kuralNumber - +1]
+  try {
+    let kuralJSON = kural['kural'][kuralNumber - +1]
 
-  document.getElementById('sec-title').innerHTML = `${kuralJSON.sect_tam}`
-  document.getElementById(
-    'chapter-title'
-  ).innerHTML = `${kuralJSON.chapgrp_tam}`
-  document.getElementById(
-    'sub-chapter-title'
-  ).innerHTML = `${kuralJSON.chap_tam}`
-  document.getElementById('num').innerHTML = `${kuralJSON.number}`
-  document.getElementById('eng-verse-text').innerHTML = `${kuralJSON.eng}.`
-  document.getElementById('line1').innerHTML = `${kuralJSON.line1}`
-  document.getElementById('line2').innerHTML = `${kuralJSON.line2}`
-  document.getElementById('eng-exp-text').innerHTML = `${kuralJSON.eng_exp}.`
-  document.getElementById('muva-text').innerHTML = `${kuralJSON.mv}`
-  document.getElementById('muka-text').innerHTML = `${kuralJSON.mk}.`
-  document.getElementById('sp-text').innerHTML = `${kuralJSON.sp}`
-  document.getElementById('eng-sec-title').innerHTML = `${kuralJSON.sect_eng}`
-  document.getElementById(
-    'eng-chapter-title'
-  ).innerHTML = `${kuralJSON.chapgrp_eng}`
-  document.getElementById(
-    'eng-sub-chapter-title'
-  ).innerHTML = `${kuralJSON.chap_eng}`
+    document.getElementById('sec-title').innerHTML = `${kuralJSON.sect_tam}`
+    document.getElementById(
+      'chapter-title'
+    ).innerHTML = `${kuralJSON.chapgrp_tam}`
+    document.getElementById(
+      'sub-chapter-title'
+    ).innerHTML = `${kuralJSON.chap_tam}`
+    document.getElementById('num').innerHTML = `${kuralJSON.number}`
+    document.getElementById('eng-verse-text').innerHTML = `${kuralJSON.eng}.`
+    document.getElementById('line1').innerHTML = `${kuralJSON.Line1}`
+    document.getElementById('line2').innerHTML = `${kuralJSON.Line2}`
+    document.getElementById('eng-exp-text').innerHTML = `${kuralJSON.eng_exp}.`
+    document.getElementById('muva-text').innerHTML = `${kuralJSON.mv}`
+    document.getElementById('muka-text').innerHTML = `${kuralJSON.mk}.`
+    document.getElementById('sp-text').innerHTML = `${kuralJSON.sp}`
+    document.getElementById('eng-sec-title').innerHTML = `${kuralJSON.sect_eng}`
+    document.getElementById(
+      'eng-chapter-title'
+    ).innerHTML = `${kuralJSON.chapgrp_eng}`
+    document.getElementById(
+      'eng-sub-chapter-title'
+    ).innerHTML = `${kuralJSON.chap_eng}`
+  } catch (err) {
+    console.log(err)
+  }
 }
 
 function newKural () {
@@ -63,7 +67,7 @@ btnIncrement.addEventListener('click', () => {
 
 btnSuperIncrement.addEventListener('click', () => {
   if (1 <= currentKuralNumber && currentKuralNumber < 1330) {
-    setKuralData(currentKuralNumber+10)
+    setKuralData(currentKuralNumber + 10)
     currentKuralNumber += 10
   } else if (currentKuralNumber === 1330) {
   }
@@ -78,7 +82,7 @@ btnDecrement.addEventListener('click', () => {
 
 btnSuperDecrement.addEventListener('click', () => {
   if (1 < currentKuralNumber && currentKuralNumber <= 1330) {
-    setKuralData(currentKuralNumber-10)
+    setKuralData(currentKuralNumber - 10)
     currentKuralNumber -= 10
   } else if (currentKuralNumber === 1) {
   }
@@ -98,8 +102,9 @@ const searchKuralData = () => {
 
 btnSearch.addEventListener('click', () => searchKuralData())
 
-txtKuralNumber.addEventListener('keyup', (e) => event.key === 'Enter'?searchKuralData(): _ => _)
-
+txtKuralNumber.addEventListener('keyup', e =>
+  event.key === 'Enter' ? searchKuralData() : _ => _
+)
 
 //? Theme Toggle
 imgThiruvalluvar.addEventListener('click', () => {
