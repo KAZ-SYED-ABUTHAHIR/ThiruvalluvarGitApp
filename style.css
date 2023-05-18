@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&family=Orbitron:wght@400;700;800&family=Poppins:wght@900&display=swap');
+@font-face {
+  font-family: Thamizhi;
+  src: url(AdiraiMaji-Thamizi.ttf);
+}
+
+
 
 :root {
   --font-tamil: 'Noto Sans Tamil', sans-serif;
@@ -139,8 +145,14 @@ p.title {
   text-justify: inter-cluster;
   line-height: 1.8em;
   font-family: var(--font-tamil);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.09em;
 }
+
+.tamizhi {
+  margin-top: 15px;
+  font-family: Thamizhi;
+}
+
 
 .kural {
   display: flex;
@@ -195,7 +207,7 @@ div.inc-dec>i{
   width: 100%;
   gap: 0.7rem;
   align-items: center;
-  margin: 25px 0 40px 0;
+  margin: 15px 0 25px 0;
 }
 
 .kural-num-search>label {
@@ -213,7 +225,7 @@ div.inc-dec>i{
 }
 
 .kural-num-search>.btn-search, .btn-random {
-  font-size: 2rem;
+  font-size: 1.2rem;
   margin-left: 1rem;
 }
 
@@ -231,7 +243,7 @@ div.inc-dec>i{
 }
 
 .imgs:not(#thiruvalluvar-img) {
-  margin-top: 4rem;
+  margin-top: 3rem;
   box-shadow: 0px 0px 5px #212121,
     0px 0px 10px #252525,
     0px 0px 25px #404040;
@@ -239,6 +251,10 @@ div.inc-dec>i{
 
 #thiruvalluvar-img{
   opacity:85%;
+}
+
+.muva-img{
+  margin-top:10px;
 }
 
 .img-glow {
@@ -355,11 +371,22 @@ div.btn-container {
   color: var(--clr-text-variant-2);
 }
 
+#audio {
+  margin-top: 1rem;
+  padding: 0;
+  height: 2rem;
+  width: 100%;
+  background-blend-mode:hard-light;
+}
 @media only screen and (max-width: 550px) {
   .kural>* {
     font-size: 0.92em;
     font-weight: bolder;
     text-align: left;
+  }
+
+  .tamizhi {
+    font-size: 0.95em;
   }
 
   .kural-num-search>label {
@@ -379,6 +406,10 @@ div.btn-container {
     text-align: left;
   }
 
+  .tamizhi {
+    font-size: .9em;
+  }
+
   .kural-num-search>label {
     font-size: 0.9em;
   }
@@ -394,6 +425,10 @@ div.btn-container {
     font-size: 0.65em;
     font-weight: bolder;
     text-align: left;
+  }
+
+  .tamizhi {
+    font-size: 0.95em;
   }
 
   .kural-num-search>label {
@@ -437,13 +472,12 @@ div.btn-container {
 
 /* Add a class to show the snackbar */
 #snackbar.show {
-  bottom: 3rem; /* Slide it up */
+  bottom: 0.2rem; /* Slide it up */
 }
 
 
 #btn-random {
   cursor: pointer;
-  color: hsl(348, 83%, 50%);
 }
 
 /* Add a class for the animation */

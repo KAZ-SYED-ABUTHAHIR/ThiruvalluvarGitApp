@@ -16,6 +16,9 @@ let btnSearch = document.getElementById('btn-search')
 let btnRandom = document.getElementById('btn-random')
 let txtKuralNumber = document.getElementById('kural-num-text')
 
+let audio = document.getElementById("audio");
+// let audioSource = document.getElementById("audio-src");
+
 let setKuralData = kuralNumber => {
   try {
     let kuralJSON = kural['kural'][kuralNumber - +1]
@@ -30,7 +33,9 @@ let setKuralData = kuralNumber => {
     document.getElementById('num').innerHTML = `${kuralJSON.number}`
     document.getElementById('eng-verse-text').innerHTML = `${kuralJSON.eng}.`
     document.getElementById('line1').innerHTML = `${kuralJSON.Line1}`
+    document.getElementById('line1-tamizhi').innerHTML = `${kuralJSON.Line1}`
     document.getElementById('line2').innerHTML = `${kuralJSON.Line2}`
+    document.getElementById('line2-tamizhi').innerHTML = `${kuralJSON.Line2}`
     document.getElementById('eng-exp-text').innerHTML = `${kuralJSON.eng_exp}.`
     document.getElementById('muva-text').innerHTML = `${kuralJSON.mv}`
     document.getElementById('muka-text').innerHTML = `${kuralJSON.mk}.`
@@ -42,6 +47,10 @@ let setKuralData = kuralNumber => {
     document.getElementById(
       'eng-sub-chapter-title'
     ).innerHTML = `${kuralJSON.chap_eng}`
+
+    audio.pause();
+    audio.src = `https://www.valaitamil.com/upload/kural_audio/${kuralJSON.number}.mp3`
+    audio.load()
   } catch (err) {
     console.log(err)
   }
