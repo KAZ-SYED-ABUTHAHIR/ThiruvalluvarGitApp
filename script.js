@@ -1,4 +1,9 @@
 'use strict'
+
+const c = console.log
+
+let ZOOM_FLAG = false, zoomTimeoutID 
+
 let themeToggle = true
 
 let currentKuralNumber = 1
@@ -17,7 +22,8 @@ let btnRandom = document.getElementById('btn-random')
 let txtKuralNumber = document.getElementById('kural-num-text')
 
 let audio = document.getElementById("audio");
-// let audioSource = document.getElementById("audio-src");
+
+let zoomOverlay = document.getElementById('zoom-overlay')
 
 let setKuralData = kuralNumber => {
   try {
@@ -56,7 +62,7 @@ let setKuralData = kuralNumber => {
   }
 }
 
-function newKural () {
+function newRandomKural() {
   function randomNumberBetween (min, max) {
     min = Math.ceil(min)
     max = Math.floor(max)
@@ -68,8 +74,36 @@ function newKural () {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
+let zoomKuralNode 
+
+function zoomKural () {
+  if(!ZOOM_FLAG){
+  zoomKuralNode = document.getElementById('kural-text').cloneNode(true)
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+  zoomOverlay.appendChild(zoomKuralNode)
+  zoomOverlay.classList.replace('zoom-overlay-hide','zoom-overlay-show')
+  
+  zoomTimeoutID = setTimeout(()=>{
+    zoomOverlay.classList.replace('zoom-overlay-show','zoom-overlay-hide')
+    zoomOverlay.removeChild(zoomKuralNode)
+    
+    ZOOM_FLAG = false
+  }, 120000)
+  
+
+  ZOOM_FLAG = true 
+}
+}
+
+zoomOverlay.addEventListener('click',()=>{
+  zoomOverlay.classList.replace('zoom-overlay-show','zoom-overlay-hide')
+  zoomOverlay.removeChild(zoomKuralNode)
+  ZOOM_FLAG = false
+  clearTimeout(zoomTimeoutID)
+})
+
 btnRandom.addEventListener('click', (e)=>{
-  newKural()
+  newRandomKural()
   btnRandom.classList.add("animate");
 
   // Remove the animate class after the animation ends

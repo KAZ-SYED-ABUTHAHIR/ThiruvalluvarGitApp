@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&family=Orbitron:wght@400;700;800&family=Poppins:wght@900&display=swap');
+
 @font-face {
   font-family: Thamizhi;
   src: url(AdiraiMaji-Thamizi.ttf);
@@ -180,11 +181,11 @@ div.inc-dec {
   justify-content: space-between;
   width: 90%;
   height: 2rem;
-  align-items:center;
- 
+  align-items: center;
+
 }
 
-div.inc-dec>i{
+div.inc-dec>i {
   font-size: xx-large;
 }
 
@@ -193,13 +194,13 @@ div.inc-dec>i{
   font-size: x-large;
   font-weight: bold;
   color: var(--clr-text-variant-2);
-  border: none;  
+  border: none;
 }
 
 .btn-inc-dec:focus {
   outline: none;
-  color: var( --clr-inc-dec-btn-focus);
-  text-shadow: 2px 2px 10px var( --clr-inc-dec-btn-focus);
+  color: var(--clr-inc-dec-btn-focus);
+  text-shadow: 2px 2px 10px var(--clr-inc-dec-btn-focus);
 }
 
 .kural-num-search {
@@ -224,7 +225,8 @@ div.inc-dec>i{
   font-size: 1.2rem;
 }
 
-.kural-num-search>.btn-search, .btn-random {
+.kural-num-search>.btn-search,
+.btn-random {
   font-size: 1.2rem;
   margin-left: 1rem;
 }
@@ -249,12 +251,12 @@ div.inc-dec>i{
     0px 0px 25px #404040;
 }
 
-#thiruvalluvar-img{
-  opacity:85%;
+#thiruvalluvar-img {
+  opacity: 85%;
 }
 
-.muva-img{
-  margin-top:10px;
+.muva-img {
+  margin-top: 10px;
 }
 
 .img-glow {
@@ -352,14 +354,6 @@ div.btn-container {
 
 }
 
-.btn-newKural {
-  width: 100%;
-  height: 100%;  
-  background-color: hsl(348, 83%, 50%);
-  color: whitesmoke;
-  font-size: 1.0rem;
-  font-weight: 700;
-}
 
 .sec-title,
 .chapter-head,
@@ -376,8 +370,9 @@ div.btn-container {
   padding: 0;
   height: 2rem;
   width: 100%;
-  background-blend-mode:hard-light;
+  background-blend-mode: hard-light;
 }
+
 @media only screen and (max-width: 550px) {
   .kural>* {
     font-size: 0.92em;
@@ -435,7 +430,8 @@ div.btn-container {
     font-size: 0.7em;
   }
 
-  .kural-num-search>.btn-search, .btn-random {
+  .kural-num-search>.btn-search,
+  .btn-random {
     font-size: 1rem;
     margin-left: 1rem;
   }
@@ -458,21 +454,37 @@ div.btn-container {
   z-index: 9999;
 }
 
+.btn-newKural {
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-secondary);
+  color: whitesmoke;
+  font-size: 2.0rem;
+  font-weight: 700;
+}
+
 /* Style the snackbar */
 #snackbar {
   position: fixed;
-  bottom: -10rem; /* Hide it by default */
+  bottom: -10rem;
+  /* Hide it by default */
   left: 0;
   right: 0;
+  width: 100%;
   height: max-content;
   background-color: #7c1d1d00;
-  transition: bottom 0.8s; /* Add a transition effect */
-  z-index: 1;
+  transition: bottom 0.8s;
+  /* Add a transition effect */
+  z-index: 9999;
+  border-radius: 2rem 2rem 0 0;
+  box-shadow: 0 -8px 28px #000000;
+  overflow: hidden;
 }
 
 /* Add a class to show the snackbar */
 #snackbar.show {
-  bottom: 0.2rem; /* Slide it up */
+  bottom: 0.2rem;
+  /* Slide it up */
 }
 
 
@@ -487,4 +499,31 @@ div.btn-container {
 
   /* Use a transition to add duration and easing */
   transition: transform 0.5s ease-in-out;
+}
+
+
+.zoom-overlay-show {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100vh;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0rem;
+  left: -60%;
+  background-color: #000707dd;
+  z-index: 9999;
+  transform: rotate(90deg);
+  color: #d6efff;
+  font-size: 2.2rem;
+  transition: all .9s ease-out;
+}
+
+.zoom-overlay-hide {
+  width: 0;
+  height: 0;
+  /* transform: scale(0) ; */
+  transition: all 1.2s ease;
+  overflow: hidden;
 }
