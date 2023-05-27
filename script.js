@@ -174,6 +174,8 @@ imgThiruvalluvar.addEventListener('click', () => {
 })
 
 
+/* --------------------------------Snackbar Code From ChatGPT ----------------------------------*/
+
 // Define some variables to store the touch coordinates
 let touchStartY = null;
 let touchEndY = null;
