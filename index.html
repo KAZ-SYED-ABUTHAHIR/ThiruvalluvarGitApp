@@ -18,9 +18,24 @@
     <script src="kural.min.js" async></script>
     <script src="script.js" defer></script>
     <title>திருக்குறள் அறிவோம்</title>
-  </head>
+    <svg xmlns="http://www.w3.org/2000/svg" class="svg-filter-waves">
+      <filter id="waves" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="linearRGB">
+        <feTurbulence type="turbulence" baseFrequency="0.01 0.01" numOctaves="1" seed="1" stitchTiles="noStitch" result="turbulence"/>
+        <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="20" xChannelSelector="G" yChannelSelector="A" result="displacementMap"/>
+      </filter>
+      <animate 
+      xlink:href="#waves"
+      id="anim-dialiate" 
+      attributeName="scale"
+      from="40"
+      to="0"
+      dur="30s"
+      fill="freeze"
+    />
+    </svg>
 
   <body>
+    
     <div class="container">
       <div class="zoom-overlay zoom-overlay-hide" id="zoom-overlay"></div>
 
