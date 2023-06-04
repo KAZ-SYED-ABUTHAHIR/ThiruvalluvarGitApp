@@ -451,6 +451,13 @@ div.btn-container {
   overflow: visible;
 }
 
+.zoom-overlay-show p{
+  font-size: calc(.2rem + 2.2vh);
+  line-height: calc(2rem + 5vw);
+  font-weight: bolder;
+  text-align: left;
+}
+
 
 .zoom-overlay-hide {
   width: 0;
@@ -462,15 +469,11 @@ div.btn-container {
 
 @media only screen and (max-width: 550px) {
   .kural>* {
-    font-size: calc(.5em + 2vh);
-    line-height: calc(2em + 3vw);;
+    font-size: calc(.2rem + 2.1vw );
+    line-height: 2.2rem;
     font-weight: bolder;
     text-align: left;
   }
-
-  /* .tamizhi {
-    font-size: calc(.5em + 1vw);
-  } */
 
   .kural-num-search>label {
     font-size: 1rem;
@@ -484,15 +487,11 @@ div.btn-container {
 
 @media only screen and (max-width: 450px) {
   .kural>* {
-    font-size: calc(.5em + 2vh);
-    line-height: calc(2em + 3vw);;
+    font-size: calc(.2rem + 2.1vw );
+    line-height: 2.2rem;
     font-weight: bolder;
     text-align: left;
   }
-
-  /* .tamizhi {
-    font-size: .9em;
-  } */
 
   .kural-num-search>label {
     font-size: 0.9em;
@@ -506,8 +505,8 @@ div.btn-container {
 
 @media only screen and (max-width: 410px) {
   .kural>* {
-    font-size: calc(.0em + 2vh);
-    line-height: calc(2em + 1vw);;
+    font-size: calc(.2rem + 1.6vw );
+    line-height: 2.2rem;
     font-weight: bolder;
     text-align: left;
   }
