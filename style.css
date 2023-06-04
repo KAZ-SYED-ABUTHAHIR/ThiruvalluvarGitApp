@@ -370,12 +370,138 @@ div.btn-container {
   padding: 0;
   height: 2rem;
   width: 100%;
-  background-blend-mode: hard-light;
+  background-blend-mode: difference;
 }
+
+
+/* Style the touch area */
+#touch-area {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1rem;
+  background-color: transparent;
+  z-index: 9999;
+}
+
+.btn-newKural {
+  width: 100%;
+  height: 100%;
+  background-color: #00000099;
+  color: whitesmoke;
+  font-size: 2.0rem;
+  font-weight: 900;
+}
+
+/* Style the snackbar */
+#snackbar {
+  position: fixed;
+  bottom: -10rem;
+  /* Hide it by default */
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: max-content;
+  transition: bottom 1.8s;
+  /* Add a transition effect */
+  z-index: 9999;
+  border-radius: 1rem 1rem 0 0;
+  overflow: hidden;
+}
+
+/* Add a class to show the snackbar */
+#snackbar.show {
+  bottom: 0rem;
+  /* Slide it up */
+}
+
+
+#btn-random {
+  cursor: pointer;
+}
+
+/* Add a class for the animation */
+#btn-random.animate {
+  /* Use a transform to rotate the icon */
+  transform: rotateX(180deg);
+
+  /* Use a transition to add duration and easing */
+  transition: transform 0.5s ease-in-out;
+}
+
+.btn-newKural>i {
+  font-size: 1.5rem;
+}
+
+
+.zoom-overlay-show {
+  /* display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100vh;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0rem;
+  left: -60%;
+  background-color: #000707dd;
+  z-index: 9999;
+  transform: rotate(90deg);
+  color: #d6efff;
+  font-size: 2.2rem;
+  transition: all .9s ease-out; */
+  display: grid;
+  position: fixed;
+
+  left: -100vw;
+  top: 0;
+  right: -100vw;
+  bottom: 0;
+  place-content: center center;
+  transform: rotate(90deg);
+  font-size: 5rem;
+  background-color: #000707dd;
+  z-index: 9999;
+  transition: all .9s ease-out;
+  overflow: visible;
+}
+
+.zoom-overlay-show::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #00ff6620;
+}
+
+.zoom-overlay-show::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: #00ff6620;
+}
+
+.zoom-overlay-hide {
+  width: 0;
+  height: 0;
+  /* transform: scale(0) ; */
+  transition: all 1.2s ease;
+  overflow: hidden;
+}
+
+
+
 
 @media only screen and (max-width: 550px) {
   .kural>* {
-    font-size: calc(.5em + 1vw);;
+    font-size: calc(.5em + 1vw);
+    ;
     font-weight: bolder;
     text-align: left;
   }
@@ -396,7 +522,8 @@ div.btn-container {
 
 @media only screen and (max-width: 450px) {
   .kural>* {
-    font-size: calc(.5em + 1vw);;
+    font-size: calc(.5em + 1vw);
+    ;
     font-weight: bolder;
     text-align: left;
   }
@@ -417,7 +544,8 @@ div.btn-container {
 
 @media only screen and (max-width: 410px) {
   .kural>* {
-    font-size: calc(.5em + 1vw);;
+    font-size: calc(.5em + 1vw);
+    ;
     font-weight: bolder;
     text-align: left;
   }
@@ -440,90 +568,4 @@ div.btn-container {
     font-size: 1.0em;
     padding: 0.2em 0.0em;
   }
-}
-
-
-/* Style the touch area */
-#touch-area {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1rem;
-  background-color: transparent;
-  z-index: 9999;
-}
-
-.btn-newKural {
-  width: 100%;
-  height: 100%;
-  background-color: var(--clr-secondary);
-  color: whitesmoke;
-  font-size: 2.0rem;
-  font-weight: 700;
-}
-
-/* Style the snackbar */
-#snackbar {
-  position: fixed;
-  bottom: -10rem;
-  /* Hide it by default */
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: max-content;
-  background-color: #7c1d1d00;
-  transition: bottom 0.8s;
-  /* Add a transition effect */
-  z-index: 9999;
-  border-radius: 2rem 2rem 0 0;
-  box-shadow: 0 -8px 28px #000000;
-  overflow: hidden;
-}
-
-/* Add a class to show the snackbar */
-#snackbar.show {
-  bottom: 0.2rem;
-  /* Slide it up */
-}
-
-
-#btn-random {
-  cursor: pointer;
-}
-
-/* Add a class for the animation */
-#btn-random.animate {
-  /* Use a transform to rotate the icon */
-  transform: rotateX(180deg);
-
-  /* Use a transition to add duration and easing */
-  transition: transform 0.5s ease-in-out;
-}
-
-
-.zoom-overlay-show {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100vh;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0rem;
-  left: -60%;
-  background-color: #000707dd;
-  z-index: 9999;
-  transform: rotate(90deg);
-  color: #d6efff;
-  font-size: 2.2rem;
-  transition: all .9s ease-out;
-}
-
-.zoom-overlay-hide {
-  width: 0;
-  height: 0;
-  /* transform: scale(0) ; */
-  transition: all 1.2s ease;
-  overflow: hidden;
 }
