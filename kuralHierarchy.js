@@ -1,4 +1,4 @@
-let parts = [
+let sections = [
     {
         "name": "அறத்துப்பால்",
         "start": 1,
@@ -16,7 +16,7 @@ let parts = [
     }
 ],
 
-chapterGroups = [
+chapters = [
     {
         "name": "பாயிரவியல்",
         "start": 1,
@@ -84,7 +84,7 @@ chapterGroups = [
     }
 ],
 
-chapters = [
+subChapters = [
     {
         "name": "கடவுள் வாழ்த்து",
         "start": 1,
