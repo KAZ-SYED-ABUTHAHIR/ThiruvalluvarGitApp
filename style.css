@@ -447,22 +447,9 @@ div.btn-container {
   transform: rotate(90deg);
   font-size: 5rem;
   background-color: #000707dd;
- 
   z-index: 9999;
   transition: transform .4s ease-in-out;
-  /* animation: wavy 1s ease-in-out infinite alternate; */
   overflow: hidden;
-}
-
-@keyframes wavy {
-  from {
-    transform: translateY(5px) rotate(90deg);
-    backdrop-filter: url(#waves) blur(0px) sepia(.0);
-  }
-  to {
-    backdrop-filter: url(#waves) blur(0px) sepia(1);
-    transform: translateY(-5px) rotate(90deg);
-  }
 }
 
 .zoom-overlay-show p{
@@ -472,14 +459,12 @@ div.btn-container {
   text-align: left;
 }
 
-
 .zoom-overlay-hide {
   width: 0;
   height: 0;
   transition: all 1.2s ease;
   overflow: hidden;
 }
-
 
 @media only screen and (max-width: 550px) {
   .kural>* {
