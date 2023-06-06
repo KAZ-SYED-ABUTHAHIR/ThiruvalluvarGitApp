@@ -162,7 +162,7 @@ i {
 
 .kural-num, .sec-head, .chapter-head, .sub-chapter {
   display: flex;
-  margin: 15px 0 5px 0;
+  margin: 2px 0 2px 0;
   height: max-content;
   justify-content:space-between;
   align-items: center;
