@@ -70,6 +70,8 @@ let setKuralData = kuralNumber => {
     audio.pause()
     audio.src = `https://www.valaitamil.com/upload/kural_audio/${kuralJSON.number}.mp3`
     audio.load()
+    // currentKuralNumber = kuralNumber
+    updateIndices(currentKuralNumber)
   } catch (err) {
     console.log(err)
   }
@@ -157,29 +159,33 @@ btnSuperDecrement.addEventListener('click', () => {
 btnSectionIncrement.addEventListener('click', () => {
   sectionIndex < sections.length - 1 ? sectionIndex++ : (sectionIndex = 0)
   let kuralNumNext = sections[sectionIndex].start
-  setKuralData(kuralNumNext)
   currentKuralNumber = kuralNumNext
+  setKuralData(kuralNumNext)
+  
 })
 
 btnSectionDecrement.addEventListener('click', () => {
   sectionIndex > 0 ? sectionIndex-- : (sectionIndex = sections.length - 1)
   let kuralNumNext = sections[sectionIndex].start
-  setKuralData(kuralNumNext)
   currentKuralNumber = kuralNumNext
+  setKuralData(kuralNumNext)
+  
 })
 
 btnChapterIncrement.addEventListener('click', () => {
   chapterIndex < chapters.length - 1 ? chapterIndex++ : (chapterIndex = 0)
   let kuralNumNext = chapters[chapterIndex].start
-  setKuralData(kuralNumNext)
   currentKuralNumber = kuralNumNext
+  setKuralData(kuralNumNext)
+ 
 })
 
 btnChapterDecrement.addEventListener('click', () => {
   chapterIndex > 0 ? chapterIndex-- : (chapterIndex = chapters.length - 1)
   let kuralNumNext = chapters[chapterIndex].start
-  setKuralData(kuralNumNext)
   currentKuralNumber = kuralNumNext
+  setKuralData(kuralNumNext)
+ 
 })
 
 btnSubChapterIncrement.addEventListener('click', () => {
@@ -187,8 +193,9 @@ btnSubChapterIncrement.addEventListener('click', () => {
     ? subChapterIndex++
     : (subChapterIndex = 0)
   let kuralNumNext = subChapters[subChapterIndex].start
-  setKuralData(kuralNumNext)
   currentKuralNumber = kuralNumNext
+  setKuralData(kuralNumNext)
+  
 })
 
 btnSubChapterDecrement.addEventListener('click', () => {
@@ -196,41 +203,47 @@ btnSubChapterDecrement.addEventListener('click', () => {
     ? subChapterIndex--
     : (subChapterIndex = subChapters.length - 1)
   let kuralNumNext = subChapters[subChapterIndex].start
-  setKuralData(kuralNumNext)
   currentKuralNumber = kuralNumNext
+  setKuralData(kuralNumNext)
+  
 })
 
+let updateIndices = () => {
+  sectionIndex = getKuralSection(currentKuralNumber)
+  chapterIndex = getKuralChapter(currentKuralNumber)
+  subChapterIndex = getKuralSubChapter(currentKuralNumber)
+}
+
 let noop = _ => _
-let getKuralSection = _kuralNum =>{
+let getKuralSection = _kuralNum => {
   let resultIndices = []
-  sections.forEach( 
-    (section,i) => (section.start <= _kuralNum && _kuralNum <= section.end)?
-    resultIndices.push(i):
-    noop
+  sections.forEach((section, i) =>
+    section.start <= _kuralNum && _kuralNum <= section.end
+      ? resultIndices.push(i)
+      : noop
   )
   return resultIndices[0]
 }
 
-let getKuralChapter = _kuralNum =>{
+let getKuralChapter = _kuralNum => {
   let resultIndices = []
-  chapters.forEach( 
-    (chapter,i) => (chapter.start <= _kuralNum && _kuralNum <= chapter.end)?
-    resultIndices.push(i):
-    noop
+  chapters.forEach((chapter, i) =>
+    chapter.start <= _kuralNum && _kuralNum <= chapter.end
+      ? resultIndices.push(i)
+      : noop
   )
   return resultIndices[0]
 }
 
-let getKuralSubChapter = _kuralNum =>{
+let getKuralSubChapter = _kuralNum => {
   let resultIndices = []
-  subChapters.forEach( 
-    (subChapter,i) => (subChapter.start <= _kuralNum && _kuralNum <= subChapter.end)?
-    resultIndices.push(i):
-    noop
+  subChapters.forEach((subChapter, i) =>
+    subChapter.start <= _kuralNum && _kuralNum <= subChapter.end
+      ? resultIndices.push(i)
+      : noop
   )
   return resultIndices[0]
 }
-
 
 const searchKuralData = () => {
   try {

@@ -68,6 +68,10 @@ p.title {
   z-index: 99;
 }
 
+i {
+  font-size: .6em;
+}
+
 .container {
   display: flex;
   flex-direction: column;
