@@ -34,6 +34,10 @@ let btnSearch = document.getElementById('btn-search')
 let btnRandom = document.getElementById('btn-random')
 let txtKuralNumber = document.getElementById('kural-num-text')
 
+let selectSections = document.getElementById('select-sections')
+let selectChapters = document.getElementById('select-chapters')
+let selectSubChapters = document.getElementById('select-sub-chapters')
+
 let audio = document.getElementById('audio')
 
 let zoomOverlay = document.getElementById('zoom-overlay')
@@ -41,14 +45,10 @@ let zoomOverlay = document.getElementById('zoom-overlay')
 let setKuralData = kuralNumber => {
   try {
     let kuralJSON = kural['kural'][kuralNumber - +1]
+    selectSections.value = `${kuralJSON.sect_tam}`
+    selectChapters.value = `${kuralJSON.chapgrp_tam}`
+    selectSubChapters.value = `${kuralJSON.chap_tam}`
 
-    document.getElementById('sec-title').innerHTML = `${kuralJSON.sect_tam}`
-    document.getElementById(
-      'chapter-title'
-    ).innerHTML = `${kuralJSON.chapgrp_tam}`
-    document.getElementById(
-      'sub-chapter-title'
-    ).innerHTML = `${kuralJSON.chap_tam}`
     document.getElementById('num').innerHTML = `${kuralJSON.number}`
     document.getElementById('eng-verse-text').innerHTML = `${kuralJSON.eng}.`
     document.getElementById('line1').innerHTML = `${kuralJSON.Line1}`
@@ -316,3 +316,45 @@ function handleTouchEnd (event) {
     }, 4000)
   }
 }
+
+
+sections.forEach(section => {
+  let option = new Option(section.name);
+  selectSections.options.add(option);
+})
+
+chapters.forEach(chapter => {
+  let option = new Option(chapter.name);
+  selectChapters.options.add(option);
+})
+
+subChapters.forEach(subChapter => {
+  let option = new Option(subChapter.name);
+  selectSubChapters.options.add(option);
+})
+
+
+
+selectSections.addEventListener("change", e => {
+  let selectedSection = e.target.value
+  let sectionIndex = e.target.selectedIndex
+  let kuralNumNext = sections[sectionIndex].start
+  currentKuralNumber = kuralNumNext
+  setKuralData(kuralNumNext)
+});
+
+selectChapters.addEventListener("change", e => {
+  let selectedChapter = e.target.value
+  let chapterIndex = e.target.selectedIndex
+  let kuralNumNext = chapters[chapterIndex].start
+  currentKuralNumber = kuralNumNext
+  setKuralData(kuralNumNext)
+});
+
+selectSubChapters.addEventListener("change", e => {
+  let selectedSubChapter = e.target.value
+  let subChapterIndex = e.target.selectedIndex
+  let kuralNumNext = subChapters[subChapterIndex].start
+  currentKuralNumber = kuralNumNext
+  setKuralData(kuralNumNext)
+});
